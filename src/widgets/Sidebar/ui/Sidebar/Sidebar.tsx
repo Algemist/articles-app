@@ -4,6 +4,7 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { Button } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
+import { BugButton } from 'app/providers/ErrorBoundary';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -30,6 +31,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         >
             <Button onClick={onToggle}>{t('cкрыть')}</Button>
             <div className={cls.switchers}>
+                <BugButton />
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
             </div>
