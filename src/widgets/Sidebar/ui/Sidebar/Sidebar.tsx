@@ -69,7 +69,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 </AppLink>
             </div>
             <div className={cls.switchers}>
-                <BugButton />
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} short={collapsed} />
             </div>
