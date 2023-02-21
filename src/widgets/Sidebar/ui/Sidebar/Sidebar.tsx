@@ -4,7 +4,6 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { Button } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
-import { BugButton } from 'app/providers/ErrorBoundary';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -64,7 +63,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     <AboutIcon className={cls.icon} />
                     <span className={cls.link}>
                         {' '}
-                        {t('О сайте')}
+                        {t('Страница о нас')}
                     </span>
                 </AppLink>
             </div>
