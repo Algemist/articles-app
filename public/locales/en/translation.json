@@ -8,5 +8,7 @@
   "Обновить страницу": "reloap page",
   "Короткий Язык": "Ru",
   "Войти": "sign in",
-  "Страница о нас": "About us"
+  "Страница о нас": "About us",
+  "Форма авторизации": "Authorization form",
+  "Вы вели неверный логин или пароль": "Wrong login or password"
 }
