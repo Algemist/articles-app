@@ -6,10 +6,14 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { Input } from './Input';
 
 export default {
-    title: 'features/LoginForm',
+    title: 'shared/Input',
     component: Input,
     argTypes: {
         backgroundColor: { control: 'color' },
+    },
+    args: {
+        autoFocus: true,
+        value: 'text',
     },
 } as ComponentMeta<typeof Input>;
 
