@@ -27,7 +27,7 @@
   ],
   "profile": {  "first": "Denis",
     "lastname": "Davidov",
-    "age": 22,
+    "age": "22",
     "currency": "RUB",
     "country": "Russia",
     "city": "Moscow",

@@ -25,5 +25,5 @@ export function useTheme(): useThemeResult {
         window.document.body.className = newTheme;
     };
 
-    return { theme, toggleTheme };
+    return { theme: theme || Theme.LIGHT, toggleTheme };
 }
