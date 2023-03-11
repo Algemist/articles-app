@@ -25,11 +25,12 @@
       "password": "123"
     }
   ],
-  "profile": {  "first": "Denis",
+  "profile": {
+    "first": "Denis",
     "lastname": "Davidov",
-    "age": "22",
-    "currency": "RUB",
-    "country": "Russia",
+    "age": 22,
+    "currency": "USD",
+    "country": "Armenia",
     "city": "Moscow",
     "username": "Algemist",
     "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"

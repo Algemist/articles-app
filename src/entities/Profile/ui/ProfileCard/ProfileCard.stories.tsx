@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Country, Currency } from 'shared/const/common';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { Currency } from 'entities/Currency/model/types/currency';
+import { Country } from 'entities/Country/model/types/country';
+import AvatarImage from 'shared/assets/test/michael_scott.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -17,9 +18,9 @@ export default {
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 const data = {
     first: 'Denis',
-    age: '22',
+    age: 22,
     city: 'Moscow',
-    avatar: 'http://avatar.png',
+    avatar: AvatarImage,
     country: Country.Russia,
     username: 'Algemist',
     currency: Currency.RUB,
@@ -27,16 +28,21 @@ const data = {
 };
 
 export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [StoreDecorator({
-    profile: {
-        data,
-    },
-})];
+Primary.args = {
+    data,
+};
+
 export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {};
-PrimaryDark.decorators = [StoreDecorator({
-    profile: {
-        data,
-    },
-}), ThemeDecorator(Theme.DARK)];
+PrimaryDark.args = {
+    data,
+};
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const WithError = Template.bind({});
+WithError.args = {
+    error: 'ERROR',
+};
+
+export const WithLoading = Template.bind({});
+WithLoading.args = {
+    isLoading: true,
+};

@@ -1,12 +1,14 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Country, Currency } from 'shared/const/common';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 import { getProfileFirstName } from './getProfileFirstName';
+import { Profile } from '../../types/profile';
 
 describe('getProfileFirstName.test', () => {
     test('should return firstname of profile', () => {
-        const data = {
-            first: 'Denis',
-            age: '22',
+        const data: Profile = {
+            firstname: 'Denis',
+            age: 22,
             city: 'Moscow',
             avatar: 'http://avatar.png',
             country: Country.Russia,
