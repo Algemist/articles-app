@@ -12,7 +12,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticlePage>;
 
-const Template: ComponentStory<typeof ArticlePage> = (args) => <ArticlePage {...args} />;
+const Template: ComponentStory<typeof ArticlePage> = () => <ArticlePage />;
 
 export const Light = Template.bind({});
 Light.args = {};
