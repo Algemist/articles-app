@@ -1,13 +1,12 @@
 import axios from 'axios';
-import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Profile } from 'entities/Profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
+import { Profile } from '../../types/profile';
 import { fetchProfileData } from './fetchProfileData';
 
 const data: Profile = {
-    firstname: 'Denis',
+    first: 'Denis',
     age: 22,
     city: 'Moscow',
     avatar: 'http://avatar.png',
@@ -19,12 +18,11 @@ const data: Profile = {
 
 jest.mock('axios');
 
-const mockedAxios = jest.mocked(axios, true);
 describe('fetchProfileData.test', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(fetchProfileData);
         thunk.api.get.mockReturnValue(Promise.resolve({ data }));
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk('1');
 
         expect(thunk.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -34,7 +32,7 @@ describe('fetchProfileData.test', () => {
     test('error', async () => {
         const thunk = new TestAsyncThunk(fetchProfileData);
         thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk('1');
 
         expect(result.meta.requestStatus).toBe('rejected');
     });

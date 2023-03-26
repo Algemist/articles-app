@@ -7,7 +7,7 @@ import { Profile } from '../../types/profile';
 describe('getProfileFirstName.test', () => {
     test('should return firstname of profile', () => {
         const data: Profile = {
-            firstname: 'Denis',
+            first: 'Denis',
             age: 22,
             city: 'Moscow',
             avatar: 'http://avatar.png',

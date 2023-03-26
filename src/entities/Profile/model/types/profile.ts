@@ -10,7 +10,8 @@ export enum ValidateProfileError {
 }
 
 export interface Profile {
-    firstname?: string,
+    id?: string;
+    first?: string,
     lastname?: string,
     age?: number,
     currency?: Currency,

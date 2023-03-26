@@ -1,11 +1,10 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { Article, ArticleBlockType, ArticleType } from '../types/article';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading,
-} from 'entities/Article/model/selectors/articleDetails';
+} from './articleDetails';
 
 const article: Article = {
     id: '1',

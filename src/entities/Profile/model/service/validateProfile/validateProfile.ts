@@ -1,5 +1,4 @@
-import { Profile } from 'entities/Profile';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { Profile, ValidateProfileError } from '../../types/profile';
 
 export const validateProfile = (profile?: Profile) => {
     if (!profile) {
@@ -7,13 +6,13 @@ export const validateProfile = (profile?: Profile) => {
     }
     const {
         lastname,
-        firstname,
+        first,
         age,
         country,
     } = profile;
     const error: ValidateProfileError[] = [];
 
-    if (!firstname || !lastname) {
+    if (!first || !lastname) {
         error.push(ValidateProfileError.INCORRECT_USER_DATA);
     }
 

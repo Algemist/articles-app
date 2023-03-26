@@ -3,11 +3,11 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Profile } from 'entities/Profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { ValidateProfileError } from '../../types/profile';
 import { updateProfileData } from './updateProfileData';
 
 const data: Profile = {
-    firstname: 'Denis',
+    first: 'Denis',
     age: 22,
     city: 'Moscow',
     avatar: 'http://avatar.png',
@@ -15,11 +15,10 @@ const data: Profile = {
     username: 'Algemist',
     currency: Currency.RUB,
     lastname: 'Davidov',
+    id: '1',
 };
 
 jest.mock('axios');
-
-const mockedAxios = jest.mocked(axios, true);
 describe('updateProfileData.test', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(updateProfileData, {

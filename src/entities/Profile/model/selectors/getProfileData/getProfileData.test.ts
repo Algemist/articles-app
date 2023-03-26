@@ -7,7 +7,7 @@ import { Profile } from '../../types/profile';
 describe('getProfileData.test', () => {
     test('should return profile data', () => {
         const data: Profile = {
-            firstname: 'Denis',
+            first: 'Denis',
             age: 22,
             city: 'Moscow',
             avatar: 'http://avatar.png',

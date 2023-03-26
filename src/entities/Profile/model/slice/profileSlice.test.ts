@@ -1,11 +1,11 @@
-import { Profile, updateProfileData } from 'entities/Profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
+import { updateProfileData } from '../service/updateProfileData/updateProfileData';
 import { profileActions, profileReducer } from './profileSlice';
-import { ProfileSchema, ValidateProfileError } from '../types/profile';
+import { Profile, ProfileSchema, ValidateProfileError } from '../types/profile';
 
 const data: Profile = {
-    firstname: 'Denis',
+    first: 'Denis',
     age: 22,
     city: 'Moscow',
     avatar: 'http://avatar.png',

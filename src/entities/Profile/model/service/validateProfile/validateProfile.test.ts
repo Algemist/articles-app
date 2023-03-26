@@ -1,11 +1,11 @@
 import { Profile } from 'entities/Profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { ValidateProfileError } from '../../types/profile';
 import { validateProfile } from './validateProfile';
 
 const data: Profile = {
-    firstname: 'Denis',
+    first: 'Denis',
     age: 22,
     city: 'Moscow',
     avatar: 'http://avatar.png',
@@ -23,7 +23,7 @@ describe('correct profile', () => {
     });
 
     test('with error in firstname', async () => {
-        const dataWithError = { ...data, firstname: undefined };
+        const dataWithError = { ...data, first: undefined };
         const result = validateProfile(dataWithError);
 
         expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
@@ -32,7 +32,7 @@ describe('correct profile', () => {
     test('with all errors', () => {
         const dataWithError = {
             ...data,
-            firstname: undefined,
+            first: undefined,
             lastname: undefined,
             country: undefined,
             age: undefined,
