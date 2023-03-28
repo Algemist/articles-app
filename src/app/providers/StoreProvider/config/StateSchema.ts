@@ -6,16 +6,16 @@ import {
 } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions } from 'react-router';
-import { To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { AddNewCommentSchema } from 'features/addNewComment';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { UiSchema } from 'features/saveScroll';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    ui: UiSchema
     // Async reducers
     loginForm?: LoginSchema;
     articleDetails?: ArticleDetailsSchema;

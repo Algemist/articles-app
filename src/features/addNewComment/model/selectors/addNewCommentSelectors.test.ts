@@ -16,7 +16,7 @@ describe('addNewCommentSelectors.test', () => {
                 text: undefined,
             },
         };
-        expect(getAddNewCommentText(state as StateSchema)).toEqual(undefined);
+        expect(getAddNewCommentText(state as StateSchema)).toEqual('');
     });
     test('getAddNewCommentError test', () => {
         const state: DeepPartial<StateSchema> = {
