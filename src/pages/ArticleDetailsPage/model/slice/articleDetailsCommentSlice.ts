@@ -3,7 +3,7 @@ import { Comment } from 'entities/Comment';
 import { StateSchema } from 'app/providers/StoreProvider';
 import {
     fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/service/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../service/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailsCommentSchema } from '../types/ArticleDetailsCommentSchema';
 
 const commentsAdapter = createEntityAdapter<Comment>({
@@ -11,7 +11,7 @@ const commentsAdapter = createEntityAdapter<Comment>({
 });
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsComment || commentsAdapter.getInitialState(),
+    (state) => state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
 );
 
 const articleDetailsCommentSlice = createSlice({
@@ -41,17 +41,3 @@ const articleDetailsCommentSlice = createSlice({
 });
 
 export const { reducer: articleDetailsCommentReducer } = articleDetailsCommentSlice;
-
-//
-// type RootState = ReturnType<typeof store.getState>
-//
-// console.log(store.getState().books)
-// // { ids: [], entities: {} }
-//
-// // Can create a set of memoized selectors based on the location of this entity state
-// const booksSelectors = booksAdapter.getSelectors<RootState>(
-//     (state) => state.books
-// )
-//
-// // And then use the selectors to retrieve values
-// const allBooks = booksSelectors.selectAll(store.getState())

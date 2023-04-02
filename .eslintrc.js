@@ -34,7 +34,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['to', 'data-testid'],
+            ignoreAttribute: ['to', 'data-testid', 'target'],
         }],
         'max-len': ['warn', {
             ignoreComments: true,
