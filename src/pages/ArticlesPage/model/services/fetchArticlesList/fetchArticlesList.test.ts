@@ -228,11 +228,12 @@ describe('fetchArticlesList.test', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(fetchArticlesList, {
             articlesPage: {
+                page: 1,
                 limit: 3,
             },
         });
         thunk.api.get.mockReturnValue(Promise.resolve({ data }));
-        const result = await thunk.callThunk({ page: 1 });
+        const result = await thunk.callThunk({});
 
         expect(mockedAxios.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -242,7 +243,7 @@ describe('fetchArticlesList.test', () => {
     test('error', async () => {
         const thunk = new TestAsyncThunk(fetchArticlesList);
         thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-        const result = await thunk.callThunk({ page: 1 });
+        const result = await thunk.callThunk({});
 
         expect(result.meta.requestStatus).toBe('rejected');
     });

@@ -6,6 +6,7 @@ import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicM
 import { articleDetailsReducer } from 'entities/Article';
 import { addNewCommentReducer } from 'features/addNewComment/model/slice/addNewCommentSlice';
 import { articlesPageReducer } from 'pages/ArticlesPage';
+import { saveScrollReducer } from 'features/saveScroll';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
@@ -14,6 +15,7 @@ const defaultAsyncReducers: ReducersList = {
     articleDetailsComment: articleDetailsReducer,
     addNewComment: addNewCommentReducer,
     articlesPage: articlesPageReducer,
+    ui: saveScrollReducer,
 };
 
 export const StoreDecorator = (
