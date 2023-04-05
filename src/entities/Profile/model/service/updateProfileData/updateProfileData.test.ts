@@ -1,9 +1,7 @@
-import axios from 'axios';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Profile } from 'entities/Profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from '../../types/profile';
+import { Profile, ValidateProfileError } from '../../types/profile';
 import { updateProfileData } from './updateProfileData';
 
 const data: Profile = {
