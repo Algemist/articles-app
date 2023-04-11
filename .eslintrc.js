@@ -48,6 +48,8 @@ module.exports = {
                 'align',
                 'direction',
                 'justify',
+                'role',
+                'as',
             ],
         }],
         'max-len': ['warn', {

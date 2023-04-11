@@ -4,7 +4,6 @@ import { LoginSchema } from 'features/authByUsername';
 import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entities/Article';
 import {
@@ -15,11 +14,14 @@ import { AddNewCommentSchema } from 'features/addNewComment';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { UiSchema } from 'features/saveScroll';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types';
+import { rtkApi } from 'shared/api/rtkApi';
+import { ProfileSchema } from 'features/EditableProfileCard';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
-    ui: UiSchema
+    ui: UiSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
     // Async reducers
     loginForm?: LoginSchema;
     articleDetails?: ArticleDetailsSchema;
