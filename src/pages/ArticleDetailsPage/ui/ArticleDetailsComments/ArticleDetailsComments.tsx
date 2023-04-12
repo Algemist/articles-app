@@ -40,7 +40,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     const { t } = useTranslation();
 
     return (
-        <VStack gap="16" className={classNames('', {}, [className])}>
+        <VStack gap="16" max className={classNames('', {}, [className])}>
             <Text size={TextSize.L} title={t('Комментарии')} />
             <AddNewCommentForm onSendComment={onSendComment} />
             <CommentList
