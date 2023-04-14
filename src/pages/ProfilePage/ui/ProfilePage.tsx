@@ -9,10 +9,6 @@ const ProfilePage = memo(() => {
     const { id } = useParams<{id: string}>();
     const { t } = useTranslation('profile');
 
-    if (!id) {
-        return <Text title={t('Профиль не найден')} />;
-    }
-
     return (
         <Page>
             <EditableProfileCard id={id} />

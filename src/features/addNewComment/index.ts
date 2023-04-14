@@ -1,6 +1,2 @@
-import { AddNewCommentFormAsync as AddNewCommentForm } from './ui/AddNewCommentForm/AddNewCommentForm.async';
-import { AddNewCommentSchema } from './model/types/addNewComment';
-
-export {
-    AddNewCommentSchema, AddNewCommentForm,
-};
+export { AddNewCommentFormAsync as AddNewCommentForm } from './ui/AddNewCommentForm/AddNewCommentForm.async';
+export type { AddNewCommentSchema } from './model/types/addNewComment';

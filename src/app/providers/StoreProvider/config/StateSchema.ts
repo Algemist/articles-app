@@ -6,10 +6,6 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entities/Article';
-import {
-    ArticleDetailsCommentSchema,
-    ArticleDetailsRecommendationSchema,
-} from 'pages/ArticleDetailsPage';
 import { AddNewCommentSchema } from 'features/addNewComment';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { UiSchema } from 'features/saveScroll';

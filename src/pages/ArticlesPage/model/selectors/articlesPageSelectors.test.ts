@@ -13,7 +13,7 @@ describe('articlesPageSelectors.test', () => {
                 view: ArticleView.BIG,
             },
         };
-        expect(getArticlesPageView(state as StateSchema)).toEqual(ArticleView.BIG);
+        expect(getArticlesPageView(state as StateSchema)).toEqual('BIG');
     });
     test('getArticlesPageView test with undefined value', () => {
         const state: DeepPartial<StateSchema> = {

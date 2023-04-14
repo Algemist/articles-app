@@ -21,18 +21,6 @@ const ArticleDetailsPage = () => {
     const { t } = useTranslation('article');
     const { id } = useParams<{id: string}>();
 
-    if (!id) {
-        return (
-            <Page>
-                <Text
-                    theme={TextTheme.ERROR}
-                    align={TextAlign.CENTER}
-                    title={t('Статья не найдена')}
-                />
-            </Page>
-        );
-    }
-
     return (
         <DynamicModuleLoader reducers={initReducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [])}>

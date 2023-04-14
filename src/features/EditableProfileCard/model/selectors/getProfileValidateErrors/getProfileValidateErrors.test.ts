@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
+import { ValidateProfileError } from '../../consts/consts';
 import { getProfileValidateErrors } from './getProfileValidateErrors';
-import { ValidateProfileError } from '../../types/editableProfileCard';
 
 describe('getProfileValidateErrors.test', () => {
     test('should return errors', () => {
