@@ -9,7 +9,8 @@ export function buildLoaders(option: BuildOptions): webpack.RuleSetRule[] {
 
     const svgLoader = buildSvgLoaders();
 
-    const babelLoader = buildBabelLoader(option);
+    const codeBabelLoader = buildBabelLoader({ ...option, isTsx: false });
+    const tsxCodeBabelLoader = buildBabelLoader({ ...option, isTsx: true });
 
     const reactRefreshLoader = {
         test: /\.[jt]sx?$/,
@@ -44,9 +45,9 @@ export function buildLoaders(option: BuildOptions): webpack.RuleSetRule[] {
     return [
         fileLoader,
         svgLoader,
-        babelLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
         reactRefreshLoader,
-        typescriptLoader,
         cssLoader,
     ];
 }
