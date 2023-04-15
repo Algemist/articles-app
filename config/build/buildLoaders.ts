@@ -36,11 +36,11 @@ export function buildLoaders(option: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = buildCssLoaders(isDev);
 
-    const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    };
+//     const typescriptLoader = {
+//         test: /\.tsx?$/,
+//         use: 'ts-loader',
+//         exclude: /node_modules/,
+//     };
 
     return [
         fileLoader,
