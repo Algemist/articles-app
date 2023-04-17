@@ -50,6 +50,7 @@ module.exports = {
                 'justify',
                 'role',
                 'as',
+                'border',
             ],
         }],
         'max-len': ['warn', {

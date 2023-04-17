@@ -54,7 +54,6 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",
-    "@types/react-virtualized-auto-sizer": "^1.0.1",
     "@types/react-window": "^1.8.5",
     "@types/webpack": "^5.28.0",
     "@types/webpack-bundle-analyzer": "^4.4.1",
@@ -114,8 +113,7 @@
     "react-i18next": "^11.18.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "react-virtualized-auto-sizer": "^1.0.14",
-    "react-window": "^1.8.8"
+    "react-virtuoso": "^4.2.1"
   },
   "loki": {
     "configurations": {

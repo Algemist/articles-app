@@ -2,9 +2,7 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
-// import { List, ListRowProps, WindowScroller } from 'react-virtualized';
-import { FixedSizeList as List } from 'react-window';
-import AutoSizer from 'react-virtualized-auto-sizer';
+import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import cls from './ArticleList.module.scss';
@@ -81,7 +79,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
                 <Text
-                    theme={TextTheme.ERROR}
+                    theme={TextTheme.PRIMARY}
                     title={t('Статьи не найдены')}
                     size={TextSize.L}
                 />
@@ -89,42 +87,46 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
+    if (!virtualized) {
+        return (
+            <div
+                className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+            >
+                {articles.map((article) => (
+                    <ArticleListItem
+                        article={article}
+                        view={view}
+                    />
+                ))}
+                {isLoading && getSkeletons(view)}
+            </div>
+        );
+    }
+
+    const renderListItem = (index: number, article: Article) => (
+        <ArticleListItem
+            article={article}
+            view={view}
+        />
+    );
+
     return (
         <div
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
         >
-            {virtualized ? (
-                // <List
-                //     height={150}
-                //     itemCount={1000}
-                //     itemSize={35}
-                //     width={300}
-                // >
-                //     {rowRenderer}
-                // </List>
-                <AutoSizer>
-                    {({ height, width }) => (
-                        <List
-                            className="List"
-                            height={height!}
-                            itemCount={1000}
-                            itemSize={35}
-                            width={width!}
-                        >
-                            {rowRenderer}
-                        </List>
-                    )}
-                </AutoSizer>
+            {view === ArticleView.BIG ? (
+                <Virtuoso
+                    style={{ height: '100%' }}
+                    useWindowScroll
+                    totalCount={articles.length}
+                    data={articles}
+                    itemContent={renderListItem}
+                />
             ) : (
-                articles.map((article) => (
-                    <ArticleListItem
-                        article={article}
-                        key={article.id}
-                        view={view}
-                        target={target}
-                        className={cls.card}
-                    />
-                ))
+                <VirtuosoGrid
+                    totalCount={articles.length}
+
+                />
             )}
             {isLoading && getSkeletons(view)}
         </div>
@@ -159,14 +161,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     //                         scrollTop={scrollTop}
     //                     />
     //                 ) : (
-    //                     articles.map((article) => (
-    //                         <ArticleListItem
-    //                             article={article}
-    //                             key={article.id}
-    //                             view={view}
-    //                             target={target}
-    //                             className={cls.card}
-    //                         />
+    //
     //                     ))
     //                 )}
     //                 {isLoading && getSkeletons(view)}
