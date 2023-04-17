@@ -28,6 +28,7 @@
     transition: 0.3s transform;
     transform: scale(0.5);
     max-width: 60%;
+    z-index: var(--modal-z-index);
 }
 
 .opened {

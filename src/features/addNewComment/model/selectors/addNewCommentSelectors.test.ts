@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getAddNewCommentError, getAddNewCommentText } from './addNewCommentSelectors';
 
 describe('addNewCommentSelectors.test', () => {

@@ -1,9 +1,9 @@
-import { getUserAuthData, getUserRoles } from 'entities/User';
 import { useLocation, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useMemo } from 'react';
-import { UserRole } from 'entities/User/model/consts/consts';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { getUserAuthData, getUserRoles } from '@/entities/User';
+import { UserRole } from '@/entities/User/model/consts/consts';
 
 interface RequireAuthProps {
     children: JSX.Element;

@@ -1,4 +1,4 @@
-import { ArticleView } from 'entities/Article';
+import { ArticleView } from '@/entities/Article';
 import { articlesPageActions, articlesPageReducer } from './articlesPageSlice';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 
