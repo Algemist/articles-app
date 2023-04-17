@@ -4,7 +4,9 @@
 @import "themes/normal";
 @import "themes/orange";
 
-body {
+body,
+.app_modal,
+.app_drawer {
     font: var(--font-m);
     color: var(--primary-color);
 }
