@@ -46,7 +46,7 @@ export function Dropdown(props: DropdownProps) {
             <Menu.Items
                 className={classNames(cls.menu, {}, menuClasses)}
             >
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const content = ({ active }: {active: boolean}) => (
                         <button
                             onClick={item.onClick}
@@ -64,6 +64,7 @@ export function Dropdown(props: DropdownProps) {
                                 as={AppLink}
                                 to={item.href}
                                 disabled={item.disabled}
+                                key={`dropdown-key-${index}`}
                             >
                                 {content}
                             </Menu.Item>
