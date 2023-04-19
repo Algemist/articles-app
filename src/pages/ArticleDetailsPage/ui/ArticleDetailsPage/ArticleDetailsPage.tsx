@@ -12,6 +12,7 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';
 import cls from './ArticleDetailsPage.module.scss';
+import { ArticleRating } from '@/features/articleRating';
 
 const initReducers: ReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -21,12 +22,17 @@ const ArticleDetailsPage = () => {
     const { t } = useTranslation('article');
     const { id } = useParams<{id: string}>();
 
+    if (!id) {
+        return null;
+    }
+
     return (
         <DynamicModuleLoader reducers={initReducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [])}>
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <ArticleRating articleId={id} />
                     <ArticleRecommendationList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

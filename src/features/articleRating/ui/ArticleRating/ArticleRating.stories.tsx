@@ -2,17 +2,17 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
-import { StarRating } from './StarRating';
+import ArticleRating from './ArticleRating';
 
 export default {
-    title: '/StarRating',
-    component: StarRating,
+    title: '/ArticleRating',
+    component: ArticleRating,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof StarRating>;
+} as ComponentMeta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof StarRating> = (args) => <StarRating {...args} />;
+const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
