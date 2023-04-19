@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { Overlay } from './Overlay';
 
 export default {
-    title: '/Overlay',
+    title: 'shared/Overlay',
     component: Overlay,
     argTypes: {
         backgroundColor: { control: 'color' },

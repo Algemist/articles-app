@@ -3,9 +3,11 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { AvatarDropdown } from './AvatarDropdown';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { UserRole } from '@/entities/User';
 
 export default {
-    title: '/AvatarDropdown',
+    title: 'features/AvatarDropdown',
     component: AvatarDropdown,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -14,9 +16,29 @@ export default {
 
 const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {};
+export const WithAdminRights = Template.bind({});
+WithAdminRights.args = {};
+WithAdminRights.decorators = [StoreDecorator({
+    user: {
+        authData: {
+            id: '1',
+            username: 'admin',
+            roles: [UserRole.ADMIN],
+        },
+        _inited: true,
+    },
+})];
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const WithoutAdminRights = Template.bind({});
+WithoutAdminRights.args = {};
+WithoutAdminRights.decorators = [ThemeDecorator(Theme.DARK)];
+WithoutAdminRights.decorators = [StoreDecorator({
+    user: {
+        authData: {
+            id: '2',
+            username: 'user',
+            roles: [UserRole.USER],
+        },
+        _inited: true,
+    },
+})];

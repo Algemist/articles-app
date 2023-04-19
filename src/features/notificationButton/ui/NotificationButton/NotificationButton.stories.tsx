@@ -1,14 +1,38 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import withMock from 'storybook-addon-mock';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { NotificationButton } from './NotificationButton';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Notification } from '@/entities/Notification/model/types/notifications';
+
+const notification: Notification = {
+    id: '1',
+    title: 'title of notification',
+    description: 'description of notification',
+};
 
 export default {
-    title: '/NotificationButton',
+    title: 'features/NotificationButton',
     component: NotificationButton,
     argTypes: {
         backgroundColor: { control: 'color' },
+    },
+    decorators: [StoreDecorator({}), withMock],
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/notifications`,
+                method: 'GET',
+                status: 200,
+                response: [
+                    { ...notification, id: '1' },
+                    { ...notification, id: '2' },
+                    { ...notification, id: '3' },
+                ],
+            },
+        ],
     },
 } as ComponentMeta<typeof NotificationButton>;
 
