@@ -1,4 +1,5 @@
 import { memo, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
@@ -7,6 +8,8 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import cls from './ArticlePage.module.scss';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { initArticlesPage } from '@/pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 
 const reducers: ReducersList = {
     articlesPage: articlesPageReducer,
@@ -14,10 +17,15 @@ const reducers: ReducersList = {
 
 const ArticlePage = () => {
     const dispatch = useAppDispatch();
+    const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
+
+    useInitialEffect(() => {
+        dispatch(initArticlesPage(searchParams));
+    });
 
     return (
         <DynamicModuleLoader

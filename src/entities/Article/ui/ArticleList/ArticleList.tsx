@@ -96,6 +96,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     <ArticleListItem
                         article={article}
                         view={view}
+                        key={article.id}
                     />
                 ))}
                 {isLoading && getSkeletons(view)}
@@ -121,6 +122,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     totalCount={articles.length}
                     data={articles}
                     itemContent={renderListItem}
+
                 />
             ) : (
                 <VirtuosoGrid
