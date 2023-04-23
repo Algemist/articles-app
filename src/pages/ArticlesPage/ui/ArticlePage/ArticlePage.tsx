@@ -9,7 +9,7 @@ import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import cls from './ArticlePage.module.scss';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { initArticlesPage } from '@/pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 const reducers: ReducersList = {
     articlesPage: articlesPageReducer,
