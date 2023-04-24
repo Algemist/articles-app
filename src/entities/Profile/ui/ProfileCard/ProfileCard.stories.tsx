@@ -2,8 +2,8 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
-import { Currency } from '@/entities/Currency/model/types/currency';
-import { Country } from '@/entities/Country/model/types/country';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import AvatarImage from '@/shared/assets/test/michael_scott.jpg';
 import { ProfileCard } from './ProfileCard';
 

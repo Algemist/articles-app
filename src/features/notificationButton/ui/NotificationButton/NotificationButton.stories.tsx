@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/app/providers/ThemeProvider';
 import { NotificationButton } from './NotificationButton';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Notification } from '@/entities/Notification/model/types/notifications';
+import { Notification } from '@/entities/Notification';
 
 const notification: Notification = {
     id: '1',

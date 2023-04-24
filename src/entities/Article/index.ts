@@ -12,3 +12,4 @@ export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelecto
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 export { ArticleType } from './model/consts/consts';
 export { ArticleSortField } from './model/consts/consts';
+export { ArticleBlockType } from './model/consts/consts';

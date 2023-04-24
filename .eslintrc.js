@@ -65,6 +65,10 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'algemist-plugin/path-checker': ['error', { alias: '@' }],
+        'algemist-plugin/public-api-imports': ['error', {
+            alias: '@',
+            testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+        }],
     },
     globals: {
         __IS_DEV__: true,
