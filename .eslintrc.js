@@ -18,7 +18,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
-        'algemist-plugin',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -63,12 +63,8 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies,
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'unused-imports/no-unused-imports': 'error',
         'react/no-array-index-key': 'off',
-        'algemist-plugin/path-checker': ['error', { alias: '@' }],
-        'algemist-plugin/public-api-imports': ['error', {
-            alias: '@',
-            testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
-        }],
     },
     globals: {
         __IS_DEV__: true,

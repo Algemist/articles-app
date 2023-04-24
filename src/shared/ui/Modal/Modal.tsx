@@ -1,5 +1,5 @@
 import React, {
-    FC, MutableRefObject, useCallback, useEffect, useRef, useState,
+    FC,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
