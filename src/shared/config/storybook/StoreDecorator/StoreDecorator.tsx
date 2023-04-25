@@ -4,7 +4,7 @@ import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/Dynami
 import { articleDetailsReducer } from '@/entities/Article';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
 import { addNewCommentReducer } from '@/features/addNewComment/testing';
-import { profileReducer } from '@/features/editableProfileCard/testing';
+import { profileReducer } from '@/features/EditableProfileCard/testing';
 import { loginReducer } from '@/features/authByUsername/testing';
 
 const defaultAsyncReducers: ReducersList = {

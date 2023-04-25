@@ -11,7 +11,7 @@ import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { UiSchema } from '@/features/saveScroll';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { rtkApi } from '@/shared/api/rtkApi';
-import { ProfileSchema } from '@/features/editableProfileCard';
+import { ProfileSchema } from '@/features/EditableProfileCard';
 
 export interface StateSchema {
     counter: CounterSchema;
