@@ -1,23 +1,21 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {
-    title: 'shared/ThemeSwitcher',
-    component: ThemeSwitcher,
+    title: 'entities/Article/articleTypeTabs',
+    component: ArticleTypeTabs,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ThemeSwitcher>;
+} as ComponentMeta<typeof ArticleTypeTabs>;
 
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
+const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeTabs {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {
-};
+Light.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};
