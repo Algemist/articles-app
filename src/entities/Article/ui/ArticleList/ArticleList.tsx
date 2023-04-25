@@ -64,6 +64,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                         article={article}
                         view={view}
                         key={article.id}
+                        target={target}
                     />
                 ))}
                 {isLoading && getSkeletons(view)}
