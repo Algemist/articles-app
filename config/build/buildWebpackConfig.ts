@@ -19,7 +19,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
             rules: buildLoaders(options),
         },
-        devtool: options.isDev ? 'inline-source-map' : undefined,
+        devtool: options.isDev ? 'eval-cheap-module-source-map' : undefined,
         plugins: buildPlugins(options),
         resolve: buildResolvers(options),
         devServer: options.isDev ? buildDevServer(options) : undefined,

@@ -11,21 +11,26 @@ import { BuildOptions } from './types/config';
 export function buildPlugins({
     paths, isDev, apiUrl, project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
+    const isProd = !isDev;
     const plugins: webpack.WebpackPluginInstance[] = [
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
         new webpack.ProgressPlugin(),
-        new MiniCssExtractPlugin({
+
+    ];
+
+    if (isProd) {
+        plugins.push(new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
-        }),
-        new CopyPlugin({
+        }));
+        plugins.push(new CopyPlugin({
             patterns: [
                 { from: paths.locales, to: paths.buildLocales },
             ],
-        }),
-    ];
+        }));
+    }
 
     if (isDev) {
         plugins.push(new webpack.DefinePlugin({
