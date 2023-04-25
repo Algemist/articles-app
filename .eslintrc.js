@@ -19,6 +19,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'unused-imports',
+        'alggemist-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -65,6 +66,24 @@ module.exports = {
         'no-undef': 'off',
         'unused-imports/no-unused-imports': 'error',
         'react/no-array-index-key': 'off',
+        'alggemist-plugin/path-checker': [
+            'error',
+            { alias: '@' },
+        ],
+        'alggemist-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
+        'alggemist-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
