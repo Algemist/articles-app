@@ -23,11 +23,11 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         onChangeSort,
     } = props;
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('articles');
     const orderOptions = useMemo<SelectOptions<SortOrder>[]>(() => [
         {
             value: 'asc',
-            content: t('Возростанию'),
+            content: t('Возрастанию'),
         }, {
             value: 'desc',
             content: t('Убыванию'),

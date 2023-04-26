@@ -30,7 +30,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
         onChange?.(value as Country);
     }, [onChange]);
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
 
     return (
         <ListBox

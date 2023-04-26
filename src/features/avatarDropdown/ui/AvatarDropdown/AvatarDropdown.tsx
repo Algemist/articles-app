@@ -21,7 +21,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
         authData,
     } = props;
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('avatarDropdown');
     const isAdmin = useSelector(isUserAdmin);
     const isManager = useSelector(isUserManager);
     const dispatch = useDispatch();

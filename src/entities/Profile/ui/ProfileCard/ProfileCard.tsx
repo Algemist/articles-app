@@ -44,7 +44,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         readOnly,
     } = props;
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
 
     const mods: Mods = {
         [cls.editing]: !readOnly,

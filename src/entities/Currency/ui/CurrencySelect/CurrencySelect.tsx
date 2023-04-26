@@ -29,7 +29,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
         onChange?.(value as Currency);
     }, [onChange]);
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
 
     return (
         <ListBox

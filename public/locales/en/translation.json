@@ -7,8 +7,14 @@
   "Произошла непредвиденная ошибка": "something goes wrong",
   "Обновить страницу": "reloap page",
   "Короткий Язык": "Ru",
+  "Профиль": "Profile",
+  "Статьи": "Articles",
+  "Приложение статей": "Application of articles",
+  "Создать статью": "Create article",
   "Войти": "sign in",
   "Страница о нас": "About us",
   "Форма авторизации": "Authorization form",
-  "Вы вели неверный логин или пароль": "Wrong login or password"
+  "Вы вели неверный логин или пароль": "Wrong login or password",
+  "Введите пароль": "password",
+  "Введите логин": "login"
 }
