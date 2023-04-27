@@ -37,7 +37,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
         dispatch(fetchCommentsByArticleId(id));
     });
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('detailsArticle');
 
     return (
         <VStack gap="16" max className={classNames('', {}, [className])}>

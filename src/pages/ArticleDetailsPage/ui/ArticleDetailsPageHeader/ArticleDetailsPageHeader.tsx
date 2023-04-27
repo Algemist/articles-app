@@ -18,7 +18,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
         className,
     } = props;
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('detailsArticle');
     const navigate = useNavigate();
     const canEdit = useSelector(getCanEditArticle);
     const article = useSelector(getArticleDetailsData);

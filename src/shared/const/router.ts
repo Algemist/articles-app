@@ -19,5 +19,5 @@ export const getRouteArticles = () => '/articles';
 export const getRouteArticlesDetails = (id: string) => `/articles/${id}`;
 export const getRouteAdminPanel = () => '/admin';
 export const getRouteArticlesCreate = () => '/articles/create';
-export const getRouteArticlesEdit = (id: string) => `articles/${id}/edit`;
+export const getRouteArticlesEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteForbidden = () => '/forbidden';
