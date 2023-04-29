@@ -1,6 +1,5 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize, TextTheme } from '@/shared/ui/Text';
 import { ArticleView } from '../../model/consts/consts';
@@ -54,49 +53,19 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
-    if (!virtualized || !onEndReached) {
-        return (
-            <div
-                className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-            >
-                {articles.map((article) => (
-                    <ArticleListItem
-                        article={article}
-                        view={view}
-                        key={article.id}
-                        target={target}
-                    />
-                ))}
-                {isLoading && getSkeletons(view)}
-            </div>
-        );
-    }
-
-    const renderListItem = (index: number, article: Article) => (
-        <ArticleListItem
-            article={article}
-            view={view}
-        />
-    );
-
     return (
         <div
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
         >
-            {view === ArticleView.BIG ? (
-                <Virtuoso
-                    useWindowScroll
-                    data={articles}
-                    itemContent={renderListItem}
-                    endReached={onEndReached}
+            {articles.map((article) => (
+                <ArticleListItem
+                    article={article}
+                    view={view}
+                    key={article.id}
+                    target={target}
                 />
-            ) : (
-                <VirtuosoGrid
-                    totalCount={articles.length}
-
-                />
-            )}
-            {/* {isLoading && getSkeletons(view)} */}
+            ))}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

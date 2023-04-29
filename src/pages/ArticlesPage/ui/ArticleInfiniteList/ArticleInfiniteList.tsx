@@ -37,7 +37,6 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
             view={view}
             articles={articles}
             className={className}
-            virtualized={false}
         />
     );
 });
