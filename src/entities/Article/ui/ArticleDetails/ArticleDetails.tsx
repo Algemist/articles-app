@@ -8,7 +8,6 @@ import {
     Text, TextAlign, TextSize, TextTheme,
 } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
-import { Avatar } from '@/shared/ui/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import { Icon } from '@/shared/ui/Icon';
@@ -27,6 +26,7 @@ import {
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
+import { AppImage } from '@/shared/ui/AppImage';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -90,10 +90,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <>
                 <HStack justify="center" max className={cls.avatarWrapper}>
-                    <Avatar
-                        size={200}
+                    <AppImage
+                        width="100%"
+                        height={200}
                         src={article?.img}
                         className={cls.avatar}
+                        fallback={<Skeleton width="100%" height={200} className={cls.avatar} />}
                     />
                 </HStack>
                 <VStack gap="4" max>
