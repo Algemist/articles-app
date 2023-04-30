@@ -17,7 +17,13 @@ export default {
 const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
 
 export const WithAdminRights = Template.bind({});
-WithAdminRights.args = {};
+WithAdminRights.args = {
+    authData: {
+        id: '1',
+        username: 'admin',
+        roles: [UserRole.ADMIN],
+    },
+};
 WithAdminRights.decorators = [StoreDecorator({
     user: {
         authData: {
@@ -25,14 +31,18 @@ WithAdminRights.decorators = [StoreDecorator({
             username: 'admin',
             roles: [UserRole.ADMIN],
         },
-        _inited: true,
     },
 })];
 
 export const WithoutAdminRights = Template.bind({});
-WithoutAdminRights.args = {};
-WithoutAdminRights.decorators = [ThemeDecorator(Theme.DARK)];
-WithoutAdminRights.decorators = [StoreDecorator({
+WithoutAdminRights.args = {
+    authData: {
+        id: '2',
+        username: 'user',
+        roles: [UserRole.USER],
+    },
+};
+WithoutAdminRights.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     user: {
         authData: {
             id: '2',
