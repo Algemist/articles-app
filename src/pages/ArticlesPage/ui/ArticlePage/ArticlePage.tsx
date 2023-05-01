@@ -32,7 +32,7 @@ const ArticlePage = () => {
             reducers={reducers}
             removeAfterUnmount={false}
         >
-            <Page OnScrollEnd={onLoadNextPart}>
+            <Page data-testid="ArticlePage" OnScrollEnd={onLoadNextPart}>
                 <ArticlePageFilters />
                 <ArticleInfiniteList className={cls.list} />
             </Page>
