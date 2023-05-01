@@ -98,8 +98,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                         fallback={<Skeleton width="100%" height={200} className={cls.avatar} />}
                     />
                 </HStack>
-                <VStack gap="4" max>
+                <VStack gap="4" max data-testid="ArticleDetails.Info">
                     <Text
+                        data-testid="ArticleDetails.Info.Title"
                         className={cls.title}
                         title={article?.title}
                         text={article?.subtitle}
