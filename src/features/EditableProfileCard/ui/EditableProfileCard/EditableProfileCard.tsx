@@ -97,13 +97,13 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     const onChangeCurrency = useCallback((currency?: Currency) => {
         dispatch(profileActions.updateProfile({
-            currency: currency || Currency.RUB,
+            currency,
         }));
     }, [dispatch]);
 
     const onChangeCountry = useCallback((country?: Country) => {
         dispatch(profileActions.updateProfile({
-            country: country || Country.Russia,
+            country,
         }));
     }, [dispatch]);
 
