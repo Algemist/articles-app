@@ -17,24 +17,21 @@ interface SelectProps<T extends string> {
 }
 
 export const Select = <T extends string>(props: SelectProps<T>) => {
-    const {
-        className,
-        options,
-        value,
-        onChange,
-        label,
-        readOnly,
-    } = props;
+    const { className, options, value, onChange, label, readOnly } = props;
 
-    const optionList = useMemo(() => options?.map((opt) => (
-        <option
-            value={opt.value}
-            className={cls.option}
-            key={opt.value}
-        >
-            {opt.content}
-        </option>
-    )), [options]);
+    const optionList = useMemo(
+        () =>
+            options?.map((opt) => (
+                <option
+                    value={opt.value}
+                    className={cls.option}
+                    key={opt.value}
+                >
+                    {opt.content}
+                </option>
+            )),
+        [options],
+    );
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
         onChange?.(e.target.value as T);

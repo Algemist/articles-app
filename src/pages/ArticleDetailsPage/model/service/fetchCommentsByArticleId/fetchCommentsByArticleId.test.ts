@@ -1,9 +1,7 @@
 import axios from 'axios';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Comment } from '@/entities/Comment';
-import {
-    fetchCommentsByArticleId,
-} from './fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';
 
 jest.mock('axios');
 const mockedAxios = jest.mocked(axios, true);

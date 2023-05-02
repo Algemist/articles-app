@@ -1,6 +1,9 @@
 import { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
@@ -28,10 +31,7 @@ const ArticlePage = () => {
     });
 
     return (
-        <DynamicModuleLoader
-            reducers={reducers}
-            removeAfterUnmount={false}
-        >
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page data-testid="ArticlePage" OnScrollEnd={onLoadNextPart}>
                 <ArticlePageFilters />
                 <ArticleInfiniteList className={cls.list} />

@@ -14,7 +14,9 @@ export default {
     },
 } as ComponentMeta<typeof AvatarDropdown>;
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
+const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
+    <AvatarDropdown {...args} />
+);
 
 export const WithAdminRights = Template.bind({});
 WithAdminRights.args = {
@@ -24,15 +26,17 @@ WithAdminRights.args = {
         roles: [UserRole.ADMIN],
     },
 };
-WithAdminRights.decorators = [StoreDecorator({
-    user: {
-        authData: {
-            id: '1',
-            username: 'admin',
-            roles: [UserRole.ADMIN],
+WithAdminRights.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+                username: 'admin',
+                roles: [UserRole.ADMIN],
+            },
         },
-    },
-})];
+    }),
+];
 
 export const WithoutAdminRights = Template.bind({});
 WithoutAdminRights.args = {
@@ -42,13 +46,16 @@ WithoutAdminRights.args = {
         roles: [UserRole.USER],
     },
 };
-WithoutAdminRights.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    user: {
-        authData: {
-            id: '2',
-            username: 'user',
-            roles: [UserRole.USER],
+WithoutAdminRights.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '2',
+                username: 'user',
+                roles: [UserRole.USER],
+            },
+            _inited: true,
         },
-        _inited: true,
-    },
-})];
+    }),
+];

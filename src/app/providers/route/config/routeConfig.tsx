@@ -10,10 +10,13 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { UserRole } from '@/entities/User';
 import {
     AppRoutes,
-    getRouteAbout, getRouteAdminPanel,
-    getRouteArticles, getRouteArticlesCreate,
+    getRouteAbout,
+    getRouteAdminPanel,
+    getRouteArticles,
+    getRouteArticlesCreate,
     getRouteArticlesDetails,
-    getRouteArticlesEdit, getRouteForbidden,
+    getRouteArticlesEdit,
+    getRouteForbidden,
     getRouteMain,
     getRouteProfile,
 } from '@/shared/const/router';

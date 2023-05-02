@@ -1,8 +1,12 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { ArticleView } from '@/entities/Article';
 import {
-    getArticlesPageError, getArticlesPageHasMore, getArticlesPageInited,
-    getArticlesPageIsLoading, getArticlesPageLimit, getArticlesPageNum,
+    getArticlesPageError,
+    getArticlesPageHasMore,
+    getArticlesPageInited,
+    getArticlesPageIsLoading,
+    getArticlesPageLimit,
+    getArticlesPageNum,
     getArticlesPageView,
 } from './articlesPageSelectors';
 
@@ -21,7 +25,9 @@ describe('articlesPageSelectors.test', () => {
                 view: undefined,
             },
         };
-        expect(getArticlesPageView(state as StateSchema)).toEqual(ArticleView.SMALL);
+        expect(getArticlesPageView(state as StateSchema)).toEqual(
+            ArticleView.SMALL,
+        );
     });
     test('getArticlesPageIsLoading test', () => {
         const state: DeepPartial<StateSchema> = {

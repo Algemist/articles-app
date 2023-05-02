@@ -37,14 +37,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
-    const OnSelectStars = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else {
-            onAccept?.(selectedStarsCount);
-        }
-    }, [hasFeedback, onAccept]);
+    const OnSelectStars = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(selectedStarsCount);
+            }
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHandle = useCallback(() => {
         setIsModalOpen(false);
@@ -57,10 +60,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     }, [onCancel, starsCount]);
 
     const modalContent = (
-        <VStack
-            gap="32"
-            max
-        >
+        <VStack gap="32" max>
             <Text title={feedbackTitle} />
             <Input
                 data-testid="RatingCard.Input"
@@ -95,7 +95,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
         >
             <VStack align="center" gap="8">
                 <Text title={starsCount ? t('Спасибо за отзыв') : title} />
-                <StarRating selectedStarts={starsCount} size={40} onSelect={OnSelectStars} />
+                <StarRating
+                    selectedStarts={starsCount}
+                    size={40}
+                    onSelect={OnSelectStars}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>

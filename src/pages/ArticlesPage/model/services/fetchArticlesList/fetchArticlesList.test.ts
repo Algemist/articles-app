@@ -11,9 +11,7 @@ const data = [
         views: 1022,
         createdAt: '26.02.2022',
         userId: '1',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         blocks: [
             {
                 id: '1',
@@ -83,9 +81,7 @@ const data = [
         views: 1022,
         createdAt: '26.02.2022',
         userId: '1',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         blocks: [
             {
                 id: '1',
@@ -155,9 +151,7 @@ const data = [
         views: 1022,
         createdAt: '26.02.2022',
         userId: '1',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         blocks: [
             {
                 id: '1',

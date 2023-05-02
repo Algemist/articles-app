@@ -31,18 +31,22 @@ export default {
 const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
 
 export const Light = Template.bind({});
-Light.args = {
-};
-Light.decorators = [StoreDecorator({
-    profile: {
-        data,
-    },
-})];
+Light.args = {};
+Light.decorators = [
+    StoreDecorator({
+        profile: {
+            data,
+        },
+    }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        data,
-    },
-})];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            data,
+        },
+    }),
+];

@@ -7,10 +7,12 @@ describe('articlesPageSlice.test', () => {
         const state: DeepPartial<ArticlesPageSchema> = {
             view: ArticleView.BIG,
         };
-        expect(articlesPageReducer(
-            state as ArticlesPageSchema,
-            articlesPageActions.setView(ArticleView.SMALL),
-        )).toEqual({
+        expect(
+            articlesPageReducer(
+                state as ArticlesPageSchema,
+                articlesPageActions.setView(ArticleView.SMALL),
+            ),
+        ).toEqual({
             view: ArticleView.SMALL,
         });
     });
@@ -18,10 +20,12 @@ describe('articlesPageSlice.test', () => {
         const state: DeepPartial<ArticlesPageSchema> = {
             page: 1,
         };
-        expect(articlesPageReducer(
-            state as ArticlesPageSchema,
-            articlesPageActions.setPage(42),
-        )).toEqual({
+        expect(
+            articlesPageReducer(
+                state as ArticlesPageSchema,
+                articlesPageActions.setPage(42),
+            ),
+        ).toEqual({
             page: 42,
         });
     });

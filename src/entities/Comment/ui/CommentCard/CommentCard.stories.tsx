@@ -23,7 +23,9 @@ const data = {
     },
 };
 
-const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
+const Template: ComponentStory<typeof CommentCard> = (args) => (
+    <CommentCard {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {

@@ -12,16 +12,20 @@ export default {
     args: {
         articleId: '1',
     },
-    decorators: [StoreDecorator({
-        user: {
-            authData: {
-                id: '1',
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {
+                    id: '1',
+                },
             },
-        },
-    })],
+        }),
+    ],
 } as ComponentMeta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
+const Template: ComponentStory<typeof ArticleRating> = (args) => (
+    <ArticleRating {...args} />
+);
 
 export const WithoutRating = Template.bind({});
 WithoutRating.args = {};

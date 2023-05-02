@@ -8,28 +8,28 @@ interface LoginByUsername {
     password: string;
 }
 
-export const loginByUsername = createAsyncThunk<User, LoginByUsername, ThunkConfig<string>>(
-    'common/loginByUsername',
-    async (authData, thunkAPI) => {
-        const {
-            extra,
-            rejectWithValue,
-            dispatch,
-        } = thunkAPI;
+export const loginByUsername = createAsyncThunk<
+    User,
+    LoginByUsername,
+    ThunkConfig<string>
+>('common/loginByUsername', async (authData, thunkAPI) => {
+    const { extra, rejectWithValue, dispatch } = thunkAPI;
 
-        try {
-            const response = await extra.api.post<User>('/login', authData);
-            if (!response.data) {
-                throw new Error();
-            }
-
-            localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
-            dispatch(userActions.setAuthData(response.data));
-
-            return response.data;
-        } catch (e) {
-            console.log(e);
-            return rejectWithValue('error');
+    try {
+        const response = await extra.api.post<User>('/login', authData);
+        if (!response.data) {
+            throw new Error();
         }
-    },
-);
+
+        localStorage.setItem(
+            USER_LOCALSTORAGE_KEY,
+            JSON.stringify(response.data),
+        );
+        dispatch(userActions.setAuthData(response.data));
+
+        return response.data;
+    } catch (e) {
+        console.log(e);
+        return rejectWithValue('error');
+    }
+});

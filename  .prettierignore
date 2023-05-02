@@ -1,0 +1,8 @@
+# Ignore artifacts:
+build
+coverage
+*.html
+*.css
+*.scss
+node_modules
+npm install --save-dev eslint-config-prettier

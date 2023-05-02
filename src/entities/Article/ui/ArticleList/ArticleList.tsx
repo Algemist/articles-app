@@ -18,15 +18,16 @@ interface ArticleListProps {
     onEndReached?: () => void;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(3)
-    .fill(0)
-    .map((item, index) => (
-        <ArticleListItemSkeleton
-            view={view}
-            key={index}
-            className={cls.card}
-        />
-    ));
+const getSkeletons = (view: ArticleView) =>
+    new Array(3)
+        .fill(0)
+        .map((item, index) => (
+            <ArticleListItemSkeleton
+                view={view}
+                key={index}
+                className={cls.card}
+            />
+        ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
@@ -43,7 +44,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+            <div
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
                 <Text
                     theme={TextTheme.PRIMARY}
                     title={t('Статьи не найдены')}

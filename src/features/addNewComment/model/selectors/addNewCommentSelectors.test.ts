@@ -1,5 +1,8 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { getAddNewCommentError, getAddNewCommentText } from './addNewCommentSelectors';
+import {
+    getAddNewCommentError,
+    getAddNewCommentText,
+} from './addNewCommentSelectors';
 
 describe('addNewCommentSelectors.test', () => {
     test('getAddNewCommentText test', () => {

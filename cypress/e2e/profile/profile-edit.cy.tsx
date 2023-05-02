@@ -22,6 +22,9 @@ describe('Пользователь заходит на страницу свое
         const newLastname = 'lastname';
         cy.updateProfile(newName, newLastname);
         cy.getByTestId('ProfileCard.Name').should('have.value', newName);
-        cy.getByTestId('ProfileCard.LastName').should('have.value', newLastname);
+        cy.getByTestId('ProfileCard.LastName').should(
+            'have.value',
+            newLastname,
+        );
     });
 });

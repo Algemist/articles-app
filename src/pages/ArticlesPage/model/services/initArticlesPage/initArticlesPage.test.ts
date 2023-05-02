@@ -23,7 +23,9 @@ describe('initArticlesPage.test', () => {
                 order: 'asc',
             },
         });
-        await thunk.callThunk(new URLSearchParams('sort=createdAt&order=asc&search=fsd&type=IT'));
+        await thunk.callThunk(
+            new URLSearchParams('sort=createdAt&order=asc&search=fsd&type=IT'),
+        );
         expect(thunk.dispatch).toBeCalledTimes(8);
     });
     test('initArticlesPage not called', async () => {

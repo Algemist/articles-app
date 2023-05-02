@@ -1,5 +1,8 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { getArticleCommentsIsLoading, getArticleCommentsError } from './comments';
+import {
+    getArticleCommentsIsLoading,
+    getArticleCommentsError,
+} from './comments';
 
 describe('comments.test', () => {
     test('test getArticleCommentsIsLoading', () => {
@@ -20,7 +23,9 @@ describe('comments.test', () => {
                 },
             },
         };
-        expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(false);
+        expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(
+            false,
+        );
     });
     test('test getArticleCommentsError', () => {
         const state: DeepPartial<StateSchema> = {

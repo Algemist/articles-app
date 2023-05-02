@@ -11,20 +11,14 @@ interface NotificationItemProps {
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-    const {
-        className,
-        notification,
-    } = props;
+    const { className, notification } = props;
 
     const content = (
         <Card
             theme={CardTheme.OUTLINE}
             className={classNames(cls.NotificationItem, {}, [className])}
         >
-            <Text
-                title={notification.title}
-                text={notification.description}
-            />
+            <Text title={notification.title} text={notification.description} />
         </Card>
     );
 

@@ -9,7 +9,10 @@ describe('getLoginIsLoading.test', () => {
                 password: 'password',
             },
         };
-        expect(getLoginState(state as StateSchema)).toEqual({ username: 'username', password: 'password' });
+        expect(getLoginState(state as StateSchema)).toEqual({
+            username: 'username',
+            password: 'password',
+        });
     });
 
     test('should work with empty value', () => {

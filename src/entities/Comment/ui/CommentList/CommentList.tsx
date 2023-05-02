@@ -10,15 +10,10 @@ interface CommentListProps {
     className?: string;
     comments?: Comment[];
     isLoading?: boolean;
-
 }
 
 export const CommentList = memo((props: CommentListProps) => {
-    const {
-        className,
-        comments,
-        isLoading,
-    } = props;
+    const { className, comments, isLoading } = props;
 
     const { t } = useTranslation();
 

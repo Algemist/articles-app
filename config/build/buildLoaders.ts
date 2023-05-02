@@ -19,7 +19,9 @@ export function buildLoaders(option: BuildOptions): webpack.RuleSetRule[] {
             {
                 loader: require.resolve('babel-loader'),
                 options: {
-                    plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+                    plugins: [
+                        isDev && require.resolve('react-refresh/babel'),
+                    ].filter(Boolean),
                 },
             },
         ],

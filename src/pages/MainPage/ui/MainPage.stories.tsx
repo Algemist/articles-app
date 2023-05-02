@@ -25,18 +25,19 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [StoreDecorator({
-        profile: {
-            data,
-        },
-    })],
+    decorators: [
+        StoreDecorator({
+            profile: {
+                data,
+            },
+        }),
+    ],
 } as ComponentMeta<typeof MainPage>;
 
 const Template: ComponentStory<typeof MainPage> = () => <MainPage />;
 
 export const Light = Template.bind({});
-Light.args = {
-};
+Light.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};
