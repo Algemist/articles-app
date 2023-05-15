@@ -13,6 +13,7 @@ import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
 import cls from './ArticlePage.module.scss';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 
 const reducers: ReducersList = {
     articlesPage: articlesPageReducer,
@@ -35,6 +36,7 @@ const ArticlePage = () => {
             <Page data-testid="ArticlePage" OnScrollEnd={onLoadNextPart}>
                 <ArticlePageFilters />
                 <ArticleInfiniteList className={cls.list} />
+                <ArticlePageGreeting />
             </Page>
         </DynamicModuleLoader>
     );
