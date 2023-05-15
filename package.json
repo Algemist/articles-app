@@ -27,7 +27,8 @@
         "storybook": "start-storybook -p 6006 -c ./config/storybook",
         "storybook:build": "build-storybook -c ./config/storybook",
         "prepare": "husky install",
-        "postinstall": "node scripts/clear-cache.js"
+        "postinstall": "node scripts/clear-cache.js",
+        "remove-feature": "ts-node ./scripts/remove-feature.ts"
     },
     "lint-staged": {
         "**/*.{ts,tsx}": [
