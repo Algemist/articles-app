@@ -1,4 +1,5 @@
 .SidebarRedesigned {
+    position: relative;
     background: var(--light-bg-redesigned);
     width: 220px;
     height: 100%;
@@ -7,4 +8,44 @@
 
 .appLogo {
     padding-top: 20px;
+}
+
+.items {
+    margin-top: 40px;
+}
+
+.switchers {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+}
+
+.collapseBtn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 10;
+    transform: rotate(90deg);
+}
+
+.collapsed {
+    width: 50px;
+
+    .items {
+        display: flex;
+        align-items: center;
+    }
+
+    .collapseBtn {
+        transform: rotate(-90deg);
+    }
+
+    .switchers {
+        flex-direction: column;
+        align-items: center;
+    }
 }

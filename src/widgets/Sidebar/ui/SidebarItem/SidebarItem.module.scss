@@ -13,10 +13,32 @@
     fill: var(--inverted-primary-color);
 }
 
+.itemRedesigned {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 8px;
+}
+
+.active {
+    background: linear-gradient(89.97deg, rgb(94 211 243 / 30%) 1.15%, rgb(94 211 243 / 0%) 99.97%);
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        left: 0;
+        background: var(--accent-redesigned);
+        height: 100%;
+    }
+}
+
 .collapsed {
     .link {
         opacity: 0;
         transition: 0.2s opacity;
         width: 0;
+        margin-left: 0;
     }
 }

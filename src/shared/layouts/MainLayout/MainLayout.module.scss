@@ -2,16 +2,16 @@
     min-height: 100%;
     display: grid;
     grid-template-areas: "sidebar content rightbar";
-    grid-template-columns: 284px 1fr 175px;
+    grid-template-columns: 284px 1fr 100px;
 }
 
 .sidebar {
     grid-area: sidebar;
-    justify-self: center;
     padding: 32px;
 }
 
 .content {
+    width: 100%;
     grid-area: content;
     max-width: 1200px;
     justify-self: center;
