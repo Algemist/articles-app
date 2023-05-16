@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
-import { HStack } from '@/shared/ui/deprecated/Stack';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './DeprecatedNavbar.module.scss';

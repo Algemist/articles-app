@@ -1,12 +1,12 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { ArticleView, ArticleBlockType } from '../../model/consts/consts';

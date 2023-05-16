@@ -2,10 +2,6 @@
     position: relative;
 }
 
-.active {
-    background: var(--inverted-primary-color);
-}
-
 .optionsTopRight {
     bottom: 100%;
     right: 0;
@@ -37,4 +33,8 @@
     padding: 0;
     border: none;
     cursor: pointer;
+}
+
+.active {
+    background: var(--inverted-primary-color);
 }

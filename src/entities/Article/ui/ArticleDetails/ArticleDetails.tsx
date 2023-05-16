@@ -1,6 +1,8 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import {
     Text,
     TextAlign,
@@ -9,8 +11,6 @@ import {
 } from '@/shared/ui/deprecated/Text';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Icon } from '@/shared/ui/deprecated/Icon';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,

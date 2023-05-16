@@ -1,8 +1,8 @@
 import React, { memo, ReactNode } from 'react';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './SidebarRedesigned.module.scss';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import ArrowIcon from '@/shared/assets/icons/ArrowRedesigned.svg';
 import { ThemeSwitcher } from '@/features/themeSwitcher';

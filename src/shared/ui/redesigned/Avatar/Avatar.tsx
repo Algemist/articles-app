@@ -1,0 +1,40 @@
+import { CSSProperties, FC, useMemo } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import cls from './Avatar.module.scss';
+import AvatarIcon from '../../../assets/icons/avatar.svg';
+import { AppImage } from '../../redesigned/AppImage';
+import { Icon } from '../Icon';
+import { Skeleton } from '../Skeleton';
+
+interface AvatarProps {
+    className?: string;
+    src?: string;
+    size?: number;
+    alt?: string;
+}
+export const Avatar: FC<AvatarProps> = (props) => {
+    const { src, className, size, alt } = props;
+
+    const mods: Mods = {};
+    const styles = useMemo<CSSProperties>(
+        () => ({
+            width: size || 100,
+            height: size || 100,
+        }),
+        [size],
+    );
+
+    const errorFallback = <Icon width={size} height={size} Svg={AvatarIcon} />;
+    const fallback = <Skeleton width={size} height={size} border="50%" />;
+
+    return (
+        <AppImage
+            src={src}
+            alt={alt}
+            style={styles}
+            className={classNames(cls.Avatar, mods, [className])}
+            fallback={fallback}
+            errorFallback={errorFallback}
+        />
+    );
+};

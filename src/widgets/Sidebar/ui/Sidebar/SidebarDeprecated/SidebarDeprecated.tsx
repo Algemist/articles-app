@@ -1,10 +1,6 @@
 import React, { memo, ReactNode } from 'react';
-import {
-    Button,
-    ButtonSize,
-    ButtonTheme,
-} from '@/shared/ui/deprecated/Button';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './SidebarDeprecated.module.scss';
 import { ThemeSwitcher } from '@/features/themeSwitcher';
