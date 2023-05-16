@@ -1,7 +1,7 @@
 import React, { memo, ReactNode } from 'react';
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './SidebarRedesigned.module.scss';
-import { AppLogo } from '@/shared/ui/AppLogo';
 
 interface SidebarDeprecatedProps {
     className?: string;

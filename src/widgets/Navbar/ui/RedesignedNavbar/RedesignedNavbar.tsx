@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { HStack } from '@/shared/ui/deprecated/Stack';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './RedesignedNavbar.module.scss';
-import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/authByUsername';
 import { User } from '@/entities/User';
 
