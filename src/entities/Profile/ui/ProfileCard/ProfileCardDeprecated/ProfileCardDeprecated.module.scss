@@ -1,0 +1,13 @@
+.ProfileCardDeprecated {
+    padding: 20px;
+    border: 2px solid var(--inverted-bg-color);
+}
+
+.loading,
+.error {
+    height: 112px;
+}
+
+.editing {
+    border-color: var(--inverted-primary-color);
+}
