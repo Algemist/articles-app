@@ -1,9 +1,11 @@
 import { memo } from 'react';
 import { ArticleListItemSkeletonProps } from '../ArticleListItemSkeleton';
 import { Card } from '@/shared/ui/redesigned/Card';
+import cls from './ArticleListItemSkeletonRedesigned.module.scss';
 import { ArticleView } from '../../../model/consts/consts';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface ArticleListItemSkeletonRedesignedProps
     extends ArticleListItemSkeletonProps {
@@ -31,6 +33,17 @@ export const ArticleListItemSkeletonRedesigned = memo(
             );
         }
 
-        return <Card className={className}>1</Card>;
+        return (
+            <Card className={classNames(cls.card, {}, [className])} padding="0">
+                <VStack gap="8" max>
+                    <Skeleton width="100%" height={141} />
+                    <VStack gap="4" max>
+                        <Skeleton width="100%" height={100} />
+                        <Skeleton width="100%" height={32} />
+                        <Skeleton width="100%" height={32} />
+                    </VStack>
+                </VStack>
+            </Card>
+        );
     },
 );
