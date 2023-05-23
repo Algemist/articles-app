@@ -24,11 +24,22 @@
 .content {
     padding: 20px;
     border-radius: 12px;
-    background-color: var(--bg-color);
     transition: 0.3s transform;
     transform: scale(0.5);
     max-width: 60%;
     z-index: var(--modal-z-index);
+}
+
+.modalNew {
+    .content {
+        background-color: var(--light-bg-redesigned);
+    }
+}
+
+.modalOld {
+    .content {
+        background-color: var(--bg-color);
+    }
 }
 
 .opened {

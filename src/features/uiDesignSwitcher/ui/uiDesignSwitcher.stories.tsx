@@ -2,18 +2,18 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
-import { uiDesignSwitcher } from './uiDesignSwitcher';
+import { UiDesignSwitcher } from './uiDesignSwitcher';
 
 export default {
-    title: '/uiDesignSwitcher',
-    component: uiDesignSwitcher,
+    title: '/UiDesignSwitcher',
+    component: UiDesignSwitcher,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof uiDesignSwitcher>;
+} as ComponentMeta<typeof UiDesignSwitcher>;
 
-const Template: ComponentStory<typeof uiDesignSwitcher> = (args) => (
-    <uiDesignSwitcher {...args} />
+const Template: ComponentStory<typeof UiDesignSwitcher> = (args) => (
+    <UiDesignSwitcher {...args} />
 );
 
 export const Light = Template.bind({});
