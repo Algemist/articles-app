@@ -27,9 +27,6 @@ export const ArticleListItemRedesigned = memo(
 
         const { t } = useTranslation('articles');
 
-        const Types = (
-            <Text text={article.type.join(', ')} className={cls.types} />
-        );
         const Views = (
             <HStack gap="8">
                 <Icon Svg={EyeIcon} />
@@ -118,7 +115,11 @@ export const ArticleListItemRedesigned = memo(
                                 {Views}
                             </HStack>
                             <HStack gap="4">
-                                <Avatar size={32} src={article.user.avatar} />
+                                <Avatar
+                                    size={32}
+                                    src={article.user.avatar}
+                                    className={cls.avatar}
+                                />
                                 <Text bold text={article.user.username} />
                             </HStack>
                         </VStack>
