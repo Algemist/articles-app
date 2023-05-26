@@ -1,7 +1,8 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { RatingCard } from '@/entities/Rating';
 import {
@@ -9,6 +10,7 @@ import {
     useRateArticle,
 } from '../../api/articleRaringApi';
 import { getUserAuthData } from '@/entities/User';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 export interface ArticleRatingProps {
     className?: string;
@@ -58,7 +60,13 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     );
 
     if (isLoading) {
-        return <Skeleton width="100%" height={120} />;
+        return (
+            <ToggleFeatures
+                feature="isArticleRatingEnabled"
+                off={<SkeletonDeprecated width="100%" height={120} />}
+                on={<Skeleton border="40px" width="100%" height={120} />}
+            />
+        );
     }
 
     return (

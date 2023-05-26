@@ -30,7 +30,7 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsProps) => {
     useInitialEffect(() => {
         dispatch(fetchArticleById(id));
     });
-
+    // Todo skeletons dont appear
     if (isLoading) {
         content = (
             <>
