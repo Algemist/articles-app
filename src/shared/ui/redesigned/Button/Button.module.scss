@@ -42,8 +42,31 @@
     background: none;
     border-radius: 34px;
 
-    &:hover {
-        border-color: var(--accent-redesigned);
+    &.normal {
+        border-color: var(--icon-redesigned);
+        color: var(--icon-redesigned);
+
+        &:hover {
+            border-color: var(--accent-redesigned);
+        }
+    }
+
+    &.error {
+        border-color: var(--cancel-redesigned);
+        color: var(--cancel-redesigned);
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &.success {
+        border-color: var(--save-redesigned);
+        color: var(--save-redesigned);
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }
 

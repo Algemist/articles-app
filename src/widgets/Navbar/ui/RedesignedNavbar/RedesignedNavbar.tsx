@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './RedesignedNavbar.module.scss';
 import { NotificationButton } from '@/features/notificationButton';
@@ -39,10 +39,7 @@ export const RedesignedNavbar = memo((props: RedesignedNavbarProps) => {
     return (
         <header className={classNames(cls.RedesignedNavbar, {}, [className])}>
             <div className={cls.links}>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    onClick={onOpenModal}
-                >
+                <Button variant="clear" onClick={onOpenModal}>
                     {t('Войти')}
                 </Button>
             </div>
